@@ -18,3 +18,7 @@
 *.out
 *.app
 .vs/
+*.user
+*.filters
+*.vcproj
+*.sln
