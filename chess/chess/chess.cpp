@@ -31,29 +31,38 @@ struct figura {
 };
 void ChessBoard()
 {
+    system("cls");
     char num = 'a';
+    cout << "\n";
     for (int i = 0; i < 8; i++) {
-        //cout << "\t\t\t" << 8 - i;
+        cout << "\t\t\t" << i + 1;
         for (int j = 0; j < 9; j++) {
             cout << board[i][j];
         }
         cout << endl;
     }
-   // cout << "\t\t\t";
+    cout << "\t\t\t";
+    for (int i = 1; i < 9; i++) {
+        cout << "   " << num;
+        num++;
+    }
 
 }
 void ChessBoard_DefaultPosition()
 {
     figura f;
     for (int i = 0; i < 8; i++) {
-        for (int j = 0; j < 9; j++) {
+        for (int j = 1; j < 9; j++) {
             board[i][j] = "|__|";
             board_b[i][j] = 0;
         }
     }
-    for (int i = 0; i < 9; i++) {
-        board[1][i] = "|" + f.PAWNS_B + "|"; board[1][i] = 1;
-        board[6][i] = "|" + f.PAWNS_W + "|"; board[6][i] = 1;
+    for (int i = 1; i < 9; i++) {
+        board[1][i] = "|" + f.PAWNS_B + "|"; 
+        board_b[1][i] = 1;
+
+        board[6][i] = "|" + f.PAWNS_W + "|"; 
+        board_b[6][i] = 1;
     }
     board[0][1] = board[0][8] = "|" + f.BISHOP_B + "|";
     board_b[0][1] = board_b[0][8] = 1;
